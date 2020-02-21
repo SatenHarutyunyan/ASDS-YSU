@@ -1,12 +1,14 @@
-from sklearn.model_selection import train_test_split
-import pandas as pd
+# from sklearn.model_selection import train_test_split
+# import pandas as pd
 
-class AutoML:
+from config import Config
 
-    TEST_SIZE = 0.2
-    NUMERICAL_VAL_STRATEGY = "median"
+__all__ = ("Model")
 
-    def __init__(self, path: str, target: str, auto: bool=True):
+
+class Model:
+
+    def __init__(self, config: Config, path: str, target: str, auto: bool=True):
         self.path = path
         self.target = target
         self._data = pd.read(self.path)
@@ -48,8 +50,7 @@ class AutoML:
 
 
 if __name__ == "__main__":
-    model = AutoML(
-        path='home/sevak/...', 
-        target='price', 
-        auto=False,
-        )
+    cfg = Config()
+    cfg.ESTIMAOTR = "Ridge"
+    cfg.MODEL = "regression"
+    model = Model(config=cfg, path='home/sevak/...', target='price', auto=True)
