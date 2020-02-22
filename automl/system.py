@@ -3,13 +3,22 @@ from profile import Profile
 class System:
 
     def __init__(self, profile: Profile):
-        self.process()
+        self.__profile = profile
 
-    def process(self):
-        self.pre_process()
-        self.post_propecess()
+    # @property
+    # def profile(self):
+    #     """Alias for self.__profile"""
+    #     return self.__profile
 
-    def pre_process(self):
+    # @profile.setter
+    # def profile(self, _):
+    #     self.__profile = self.__profile
+
+    def run(self):
+        self.__pre_process()
+        self.__post_propecess()
+
+    def __pre_process(self):
         """
         1. handle NA values
         2. handle categorical features
@@ -21,19 +30,23 @@ class System:
         self._set_target_and_design()
         self._set_train_test()
 
-    def post_process(self):
+    def __post_process(self):
         raise NotImplementedError
 
-    def _set_target_and_design(self):
+    def __set_target_and_design(self) -> None:
         raise NotImplementedError
 
-    def _set_train_test(self):
+    def __set_train_test(self) -> None:
         raise NotImplementedError
     
-    def _handle_cat_values(self):
+    def __handle_cat_values(self) -> None:
+        """Simple function that detects categorical features,
+        and transforms their type into numerical."""
         raise NotImplementedError
 
-    def _handle_na_values(self):
+    def __handle_na_values(self) -> None:
+        """Simple function that detects missing values,
+        and transforms their type into numerical."""
         raise NotImplementedError
 
 
@@ -44,4 +57,5 @@ if __name__ == "__main__":
     profile.DATA = "/home/sevak/..."
 
     system = System(profile=profile)
-    # system.predict()
+
+    system.run()
