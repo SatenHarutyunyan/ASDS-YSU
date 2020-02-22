@@ -1,6 +1,5 @@
 from profile import Profile
 
-
 class System:
 
     def __init__(self, profile: Profile):
