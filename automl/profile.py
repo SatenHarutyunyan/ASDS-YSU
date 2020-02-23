@@ -6,6 +6,7 @@
 
 __all__ : tuple = ("Profile",)
 
+
 class Estimator:
 
     # estimators = None
@@ -41,8 +42,18 @@ class Device:
 
 class Data:
 
-    # data = (".csv", ".tsv", "")
+    # data =  support db, cloud, web, local (determine the type ie. extensions)
     
+    def __set__(self, instance, value):
+        pass
+
+    def __get__(self, instance, owner):
+        pass
+
+class Target:
+
+    # target = either index of string 
+        
     def __set__(self, instance, value):
         pass
 
@@ -52,19 +63,8 @@ class Data:
 
 class Profile:
 
-    DEVICE = Device()
-    ESTIMATOR = Estimator()
-    MODEL = Model()
-    DATA = Data()
-
-
-if __name__ == "__main__":
-    profile = Profile() # "gpu", "cpu" (Lowercase & Uppercase)
-    profile.DEVICE = "GPU" # "regression", "classification" (Spell check, lower & upper)
-    profile.MODEL = "regression" 
-    profile.ESTIMAOTR = "Ridge" # support db, cloud, web, local (determine the type ie. extensions)
-    profile.DATA = "/home/sevak/..." 
-
-    print(
-        profile.DEVICE
-    )
+    device = Device()
+    estimator = Estimator()
+    model = Model()
+    data = Data()
+    target = Target()
