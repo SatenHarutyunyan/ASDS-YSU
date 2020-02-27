@@ -1,6 +1,7 @@
-class Target:
 
-    _targets = () 
+__all__ = ("Target", )
+
+class Target:
         
     def __set__(self, instance, value):
         pass

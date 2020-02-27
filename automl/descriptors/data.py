@@ -1,7 +1,8 @@
 
-class Data:
+__all__ = ("Data", )
 
-    _data = {}
+
+class Data:
 
     def __set__(self, instance, value):
         pass

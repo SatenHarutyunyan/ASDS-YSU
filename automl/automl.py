@@ -3,7 +3,11 @@ import os
 import numpy
 
 from descriptors import (
-    device, estimator, model, data, target
+    device,
+    estimator,
+    model,
+    data,
+    target
 )
 
 class Profile:

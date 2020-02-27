@@ -1,7 +1,9 @@
+
+__all__ = ("Device", )
+
+
 class Device:
 
-    _devices = ()
-    
     def __set__(self, instance, value):
         pass
 
