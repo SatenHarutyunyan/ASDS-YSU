@@ -1,3 +1,7 @@
+# Ignore heto kasem inch tipi file
+
+automl.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
