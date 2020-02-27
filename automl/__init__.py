@@ -1,11 +1,3 @@
 
-
-"""
-System <- config
-
-cs             math          ?
-Algorithm vs Estimator vs regressor
-
-
-
-"""
+__version__ = '0.0.1'
+NAME = "automl"
