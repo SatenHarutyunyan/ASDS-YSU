@@ -1,0 +1,1 @@
+from recipe.spark.session import spark

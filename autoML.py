@@ -5,5 +5,3 @@ profile.data = "...."
 profile.model = "classification"
 
 system = system.System(profile)
-
-# system.run()
