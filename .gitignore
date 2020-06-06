@@ -134,3 +134,7 @@ dmypy.json
 
 # Vscode
 .vscode/
+
+# Projects venv
+.autoML
+.recipe
