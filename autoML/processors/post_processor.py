@@ -1,4 +1,0 @@
-
-
-class PostProcessor:
-    pass
