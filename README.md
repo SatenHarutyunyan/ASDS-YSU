@@ -11,23 +11,20 @@ Clone the Repo and and do the following steps:
 3. `pip install -U pip`
 4. `pip install -r requirements/<project_name>.txt`
 
-In workspace you will see files like `<project_name>`.py and `<project_name>`_preview.py
+In workspace you will see files like `<project_name>`.py which is the `main.py` for the corresponding project.
 
-`<project_name>`.py ->         This is the main.py for the corresponding project.
-
-`<project_name>`_preview.py -> This is for exploring and ad hoc testing the code results.
 
 # Projects
 
-## AutoML
+## 1. AutoML
 
 Status: In process
 
-## Recipe
+## 2. Recipe
 
 Status: In progress
 
-## social_sentiment
+## 3. social_sentiment
 
 Using PySpark engine, project solves the problem of  `real time` prediction for posts
 from social sites (Facebook, Twitter), to determinie whether 
