@@ -26,3 +26,15 @@ Status: In process
 #### Recipe
 
 Status: Ready
+
+### social_sentiment
+
+Using pySpark we get real time prediction for posts
+from social sites (Facebook, Twitter), to determinie whether 
+posts are containing offensive speech or not.
+
+`
+python social_sentiment.py localhost 4455
+
+nc -lk 4455
+`
