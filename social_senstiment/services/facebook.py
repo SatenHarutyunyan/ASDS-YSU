@@ -22,3 +22,9 @@ class FacebookFeed:
             return posts
         except facebook.GraphAPIError:
             return None
+
+
+if __name__ == "__main__":
+    my_profile = FacebookFeed()
+    my_profile.get_posts()
+    # latest = posts[-1]

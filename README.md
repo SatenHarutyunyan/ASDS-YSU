@@ -17,24 +17,64 @@ In workspace you will see files like `<project_name>`.py and `<project_name>`_pr
 
 `<project_name>`_preview.py -> This is for exploring and ad hoc testing the code results.
 
-## Projects
+# Projects
 
-#### AutoML
+## AutoML
 
 Status: In process
 
-#### Recipe
+## Recipe
 
-Status: Ready
+Status: In progress
 
-### social_sentiment
+## social_sentiment
 
-Using pySpark we get real time prediction for posts
+Using PySpark engine, project solves the problem of  `real time` prediction for posts
 from social sites (Facebook, Twitter), to determinie whether 
-posts are containing offensive speech or not.
+posts are containing offensive language or not.
 
-`
-python social_sentiment.py localhost 4455
+Project Structure
 
-nc -lk 4455
-`
+```
+        .   
+    │───data
+    │   │-tweet_sentiments.csv
+    │───services
+    │   │-facebook.py  //
+    │   │-twitter.py  // not implemented
+    │───spark
+    │   │──core
+    │   │  │-session.py
+    │   │  │-context.py
+    │   │  │-streaming.py
+    │   │──ml
+    │   │  │-estimator.py
+    │   │  │-pipeline.py
+    │   │  │-transformer.py
+    └───utils
+        │-schema.py
+          
+```
+
+**make sure you have the `spark` properly installed on your machine.**
+
+__Build__
+
+```bash
+python3 - venv .social_sentiment
+source .social_sentiment/bin/activate
+pip install -U pip
+pip install -r requirements/social_sentiment.txt
+```
+
+__Run__
+
+```bash
+python social_sentiment.py localhost 4455 // start the engine
+nc -lk 4455 // write streams here
+```
+
+*Click to see the attached video-demo.*
+
+[![Watch the video](https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg)](https://youtu.be/KxamtBWWlAg)
+
