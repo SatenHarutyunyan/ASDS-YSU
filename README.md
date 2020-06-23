@@ -74,4 +74,3 @@ nc -lk 4455 // write streams here
 *Click to see the attached video-demo.*
 
 [![Watch the video](https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg)](https://youtu.be/KxamtBWWlAg)
-
