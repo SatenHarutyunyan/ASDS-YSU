@@ -9,7 +9,9 @@ _regex_tokenizer = RegexTokenizer(inputCol= 'tweet' , outputCol= 'tokens', patte
 
 _stop_word_remover = StopWordsRemover(inputCol= 'tokens', outputCol= 'filtered_words')
 
-_word_2_vec = Word2Vec(inputCol= 'filtered_words', outputCol= 'vector', vectorSize= 100)
+_word_2_vec = Word2Vec(inputCol= 'filtered_words', outputCol= 'vector', 
+                       vectorSize= 100, minCount=5, numPartitions=1, 
+                       stepSize=0.025, maxIter=1,)
 
 TRANSFORMERS = [
     _regex_tokenizer,

@@ -1,9 +1,8 @@
-# from pyspark.ml.feature import StringIndexer, OneHotEncoderEstimator, VectorAssembler
 import sys
 
 from pyspark.sql import Row, Column
 
-from social_senstiment.data import tweet_sentiments
+from social_senstiment.data import post_sentiments
 from social_senstiment.utils.schema import SCHEMA as schema
 from social_senstiment.spark.core.session import SPARK_SESSION as spark
 from social_senstiment.spark.core.streaming import SPARK_STREAMING_CONTEXT as ssc
@@ -30,11 +29,12 @@ if __name__ == "__main__":
 
     # reading the data set
     print('\n\nReading the dataset...........................\n')
-    data = spark.read.csv(tweet_sentiments, schema=schema, header=True)
+    data = spark.read.csv(post_sentiments, schema=schema, header=True)
 
     print('\n\nFit the pipeline with the training data.......\n')
-    model = pipeline.fit(data)  # estimator.fit(train_data) for testing
-
+    model = pipeline.fit(data)  # for sklearn it is `estimator.fit(train_data)` [for testing]
+    # estimator = model.stages[-1]
+    # print(dir(estimator))             # get necessary information about estimator
     print('\n\nModel Trained....Waiting for the Data!!!!!!!!\n')
     HOST, PORT = sys.argv[1], int(sys.argv[2])
     lines = ssc.socketTextStream(HOST, PORT)

@@ -6,7 +6,7 @@ This repository contains multiple (stand-alone) projects.
 
 Clone the Repo and and do the following steps:
 
-1. `python3 -m venv .<project_name>`   ex. pyton3 -m venv .recipe
+1. `python3 -m venv .<project_name>`
 2. `source .<project_name>/bin/activate`
 3. `pip install -U pip`
 4. `pip install -r requirements/<project_name>.txt`
@@ -58,7 +58,7 @@ Project Structure
 __Build__
 
 ```bash
-python3 - venv .social_sentiment
+python3 -m venv .social_sentiment
 source .social_sentiment/bin/activate
 pip install -U pip
 pip install -r requirements/social_sentiment.txt
